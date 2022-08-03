@@ -2,7 +2,7 @@
 
 To have a simple structure of a <b>Koa App</b> in your system just run
 <pre>npx koa-app-boilerplate yourAppName</pre>
-<p>File structure </p>
+<p><b>File structure </b></p>
 <pre>
         |src\
             |--controllers\             # Route controllers (controller layer)
