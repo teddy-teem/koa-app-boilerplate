@@ -1,7 +1,5 @@
 const fs = require('fs');
-const temp = require("./temp.json");
-const path = require("path");
-const { dirname } = require('path');
+const temp = require("../temp.json");
 
 exports.writeController = (repo)=>{
     fs.writeFileSync(`${repo}`, temp.healthController, );
