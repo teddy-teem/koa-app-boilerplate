@@ -1,9 +1,10 @@
 # koa-app-boilerplate
 
 To have a simple structure of a <b>Koa App</b> in your system just run
-
-<pre>npx koa-app-boilerplate yourAppName</pre> for javascript
-<pre>npx koa-app-boilerplate yourAppName ts</pre> for typescript
+<p><b>For javascript</b></p>
+<pre>npx koa-app-boilerplate yourAppName</pre>
+<p><b>For typescript</b></p>
+<pre>npx koa-app-boilerplate yourAppName ts</pre> 
 
 <p><b>File structure for javascript </b></p>
 <pre>
@@ -26,7 +27,7 @@ To have a simple structure of a <b>Koa App</b> in your system just run
 <pre>
         |src\
             |--controllers\             # Route controllers (controller layer)
-                |--health.ts  # A demo health controller file
+                |--health.ts            # A demo health controller file
             |--dist\                    # Converted Javascript file
             |--models\                  # Models (data layer)
             |--node_modules\            # Installed node modules
@@ -41,17 +42,18 @@ To have a simple structure of a <b>Koa App</b> in your system just run
         |.gitignore                     # .gitignore file
 </pre>
 
-NPM packages you will get with this boilerplate are
+<b>NPM packages you will get with this boilerplate are</b>
+<pre>
+-axios
+-dotenv
+-koa
+-koa-body
+-koa-router
+-memory-cach
+-multer
 
-<ul>
-<li>axios</li>
-<li>dotenv</li>
-<li>koa</li>
-<li>koa-body</li>
-<li>koa-router</li>
-<li>memory-cach</li>
-<li>multer</li>
-</ul>
+</pre>
 
-and finally,  you can manage it is as how do you want. 
+<i>And finally,  you can manage it is as how do you want.</i>
+
 To learn koa js web framwork you can visit <a href="https://koajs.com/" target="_blank"> https://koajs.com/ </a>
