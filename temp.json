@@ -1,7 +1,7 @@
 {
     "js":{
        "healthController":"exports.health = ctx => {\n\tctx.body = { status: \"200\",message: \"success\" };\n};",
-       "index":"require(\"dotenv\").config();\nconst variables = require(\"./variables/index\");\nconst koa = require(\"koa\");\nconst koaBody = require(\"koa-body\");\nconst router = require(\"./routes\");\nconst app = new koa();\n\napp.use(koaBody());\napp.use(router.routes());\n\napp.listen(variables.appPort, () => {\n\tconsole.log(\n\t\t`Listening on ${variables.appHost}:${variables.appPort}, in ${variables.env}`\n\t);\n});",
+       "index":"require(\"dotenv\").config();\nconst variables = require(\"./variables/index\");\nconst koa = require(\"koa\");\nconst koaBody = require(\"koa-body\");\nconst router = require(\"./routes\");\nconst app = new koa();\n\napp.use(koaBody());\napp.use(router.routes());\n\napp.listen(variables.appPort, () => {\n\t console.log(\n\t\t `>>>>>>>>>Listening on ${variables.appHost}:${variables.appPort}, in ${variables.env}`\n\t );\n\t console.log(\n\t\t `>>>>>>>>>Check response ( http://${variables.appHost}:${variables.appPort}/health )`\n\t );\n});",
        "route":"const router = require(\"koa-router\");\nconst healthController = require(\"./controllers/healthController\");\nconst routes = new router();\nroutes.get(\"/health\", healthController.health);\nmodule.exports = routes;",
        "varIndex":"const appPort = process.env.APP_PORT;\nconst appHost = process.env.APP_HOST || \"localhost\";\nconst env = process.env.APP_ENV;\n\nconst variables = {\n\tappPort,\n\tappHost,\n\tenv,\n};\n\nmodule.exports = variables;"
     },
