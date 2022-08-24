@@ -5,6 +5,7 @@ To have a simple structure of a <b>Koa App</b> in your system just run
 <pre>npx koa-app-boilerplate yourAppName</pre>
 <p><b>For typescript</b></p>
 <pre>npx koa-app-boilerplate yourAppName ts</pre> 
+<p>In the <b>AppName</b> Alphabates, Hyphen(-), underscore(_) are alloweds</p>
 
 <p><b>File structure for javascript </b></p>
 <pre>
