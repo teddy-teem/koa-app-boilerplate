@@ -21,6 +21,6 @@ if (appName && validateAppName(appName) && isNameAvailable(appName)) {
 ) {
   createTsApp(appName);
 } else {
-  console.log("<<<<<<< 'appName' Only alphabates are allowed >>>>>>>>");
+  console.log("<<<<<<< 'appName' Only alphabates, hyphen(-), underscore(_) are allowed >>>>>>>>");
   console.log("----------- npx koa-app-boilerplate appName ----------");
 }
