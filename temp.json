@@ -10,7 +10,7 @@
        "route":"import router from \"koa-router\";\nimport * as healthController from \"./controllers/health\";\nconst routes = new router();\nroutes.get(\"/health\", healthController.health);\nexport default routes;\n",
        "index":"import \"dotenv/config\";\nimport variables from \"./variables\";\nimport koa from \"koa\";\nimport koaBody from \"koa-body\";\nimport router from \"./routes\";\nconst app = new koa();\n\napp.use(koaBody());\napp.use(router.routes());\napp.listen(variables.appPort, () => {\n\t console.log(\n\t\t `>>>>>>>>>Listening on ${variables.appHost}:${variables.appPort}, in ${variables.env}`\n\t );\n\t console.log(\n\t\t `>>>>>>>>>Check response ( http://${variables.appHost}:${variables.appPort}/health )`\n\t );\n});\n",
        "varIndex":"const appPort = process.env.APP_PORT || 8081;\nconst appHost = process.env.APP_HOST || \"localhost\";\nconst env = process.env.APP_ENV || \"dev\";\n\ninterface Variables {\n\t appPort: number;\n\t appHost: string;\n\t env: string;\n}\n\nconst variables : Variables = {\n\t appPort: Number(appPort),\n\t appHost: appHost,\n\t env: env\n};\n\nexport default variables;",
-       "health":"export const health = (ctx: any) => {\n\t ctx.body = { status: \"200\", message: \"success\" };\n};\nexport default { health };\n"
+       "health":"import { Context } from \"koa\";\n\nexport const health = (ctx: Context) => {\n\t ctx.body = { status: \"200\", message: \"success\" };\n};\nexport default { health };\n"
     },
     "common":{
        "env":"# App\nAPP_ENV=local\nAPP_PORT=8081\nAPP_HOST=localhost\nSERVICE_NAME=",
