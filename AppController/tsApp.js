@@ -1,26 +1,20 @@
 const execSync = require("child_process").execSync;
+const fs = require("fs");
 const wirteData = require("../helper/wirteData");
 
 exports.createTsApp = (name) => {
   console.log("I am on the way  :-p");
-  execSync(`mkdir ${name}`);
-  execSync(`mkdir src`, { cwd: `${name}` });
-  execSync(`mkdir controllers`, { cwd: `${name}/src` });
-  execSync(`mkdir models`, { cwd: `${name}/src` });
-  execSync(`mkdir variables`, { cwd: `${name}/src` });
-  execSync(`touch health.ts`, { cwd: `${name}/src/controllers` });
+  fs.mkdirSync(`./${name}`);
+  fs.mkdirSync(`./${name}/src`);
+  fs.mkdirSync(`./${name}/src/controllers`);
+  fs.mkdirSync(`./${name}/src/models`);
+  fs.mkdirSync(`./${name}/src/variables`)
   wirteData.writeController(`${name}/src/controllers/health.ts`, "ts");
-  execSync(`touch index.ts`, { cwd: `${name}/src/variables` });
   wirteData.writeVarIndex(`${name}/src/variables/index.ts`,"ts");
-  execSync(`touch index.ts`, { cwd: `${name}/src` });
   wirteData.writeIndex(`${name}/src/index.ts`, "ts");
-  execSync(`touch routes.ts`, { cwd: `${name}/src` });
   wirteData.writeRoute(`${name}/src/routes.ts`, "ts");
-  execSync(`touch .env`, { cwd: `${name}/src` });
   wirteData.writeEnv(`${name}/src/.env`, name);
-  execSync(`touch tsconfig.json`, { cwd: `${name}/src` });
   wirteData.writeTsconfigJson(`${name}/src/tsconfig.json`, name, "ts");
-  execSync(`touch .gitignore`, { cwd: `${name}` });
   wirteData.writeGitignore(`${name}/.gitignore`);
   execSync(`git init`, { cwd: `${name}` });
   execSync(`npm init -y`, { cwd: `${name}/src` });
